@@ -1,30 +1,33 @@
 <template>
-  <div id="app">
-    <v-app>
+  <div>
+    <side-menu/>
+    <v-app id="main-page">
       <main-page/>
+    </v-app>
+    <v-app id="contact-page">
+    <contact-page/>  
+    </v-app>   
+    <v-app id="iot-page">
+      <iot-page/>
     </v-app>
   </div>
 </template>
 
 <script>
-
-import MainPage from './components/MainPage'
-
+import SideMenu from "./components/SideMenu";
+import MainPage from "./components/MainPage";
+import contactPage from "./components/ContactPage";
+import IotPage from './components/IotPage/IotPage';
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    MainPage
+    MainPage,
+    SideMenu,
+    contactPage,
+    IotPage
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 0px;
-}
+<style scoped>
 </style>
